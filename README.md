@@ -1,6 +1,13 @@
-# DSAI 301 Search Engine
+# My Minimalistic Seach Engine Project Inspired by PageRank Algorithm for DSAI 301
 
-Course project for **DSAI 301 – Introduction to Translation, Bogaziçi University**. The goal is to show how a minimal crawler plus PageRank-inspired ranking can deliver meaningful search results even with a tiny amount of Python code.
+Course project for **DSAI 301 – Introduction to Translation, Bogaziçi University**.
+
+## PageRank Overview
+
+The ranking function mirrors the classic PageRank iteration:
+<img width="701" height="239" alt="image" src="https://github.com/user-attachments/assets/bb263d56-6533-452a-aff1-78c40c1ff177" />
+
+Pages with no outgoing links distribute their score uniformly across all pages, matching the “random surfer” interpretation taught in class.
 
 ## Running the Demo
 
@@ -24,25 +31,3 @@ No external libraries are needed; the entire implementation lives in `app.py`.
 - **Crawling (`crawl_web`)** – Depth-first crawl starting from the seed, collecting page text, outgoing links, and the site graph.
 - **Ranking (`compute_ranks`, `ranked_lookup`)** – Implements the PageRank-style scoring and sorts query matches by their scores before printing.
 
-## PageRank Overview
-
-The ranking function mirrors the classic PageRank iteration:
-
-\[
-\text{rank}_{t+1}(p) = \frac{1-d}{N} + d \sum_{q \to p} \frac{\text{rank}_t(q)}{L(q)}
-\]
-
-- \( d = 0.8 \) is the damping factor (probability of following a link).
-- \( N \) is the number of pages in the crawl.
-- \( q \to p \) means page \( q \) links to \( p \).
-- \( L(q) \) is the number of outgoing links from \( q \).
-
-Pages with no outgoing links distribute their score uniformly across all pages, matching the “random surfer” interpretation taught in class.
-
-## Repository Layout
-
-```
-.gitignore      # Keeps caches and OS files out of version control
-app.py          # Complete crawler + indexer + PageRank + CLI
-README.md       # Course-focused documentation (images can be added here)
-```
