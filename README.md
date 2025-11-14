@@ -1,4 +1,4 @@
-# My Minimalistic Seach Engine Project Inspired by PageRank Algorithm for DSAI 301
+# My Minimalistic Search Engine Project Inspired by PageRank Algorithm for DSAI 301
 
 Course project for **DSAI 301 – Introduction to Translation, Bogaziçi University**.
 
